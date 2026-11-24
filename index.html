@@ -1,0 +1,310 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>New Tab</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+  <main class="shell">
+
+    <header class="topline">
+      <div class="system-label">
+        <span class="live-dot"></span>
+        PERSONAL DASHBOARD
+      </div>
+
+      <div class="top-right">
+        <span id="local-zone">LOCAL SYSTEM</span>
+        <span id="today-date"></span>
+      </div>
+    </header>
+
+
+    <section class="hero-grid">
+
+      <!-- CLOCK & WEATHER -->
+      <div class="clock-weather panel">
+
+        <div class="eyebrow">LOCAL SYSTEM TIME</div>
+
+        <div id="clock" class="clock">--:--:-- --</div>
+
+        <div id="date-line" class="date-line">
+          LOADING DATE
+        </div>
+
+        <div id="timezone" class="timezone">
+          Detecting timezone...
+        </div>
+
+        <div class="rule"></div>
+
+        <div class="eyebrow weather-heading">
+          LOCAL WEATHER
+        </div>
+
+        <div class="weather-row">
+          <div id="weather-icon" class="weather-icon">◌</div>
+
+          <div>
+            <div id="weather-temp" class="weather-temp">--°C</div>
+
+            <div id="weather-description" class="weather-description">
+              Waiting for location permission
+            </div>
+          </div>
+        </div>
+
+        <div class="weather-meta">
+          <span id="weather-feels">FEELS LIKE --°C</span>
+          <span id="weather-humidity">HUMIDITY --%</span>
+          <span id="weather-wind">WIND -- km/h</span>
+        </div>
+
+        <button id="weather-refresh" class="small-button">
+          UPDATE WEATHER ↗
+        </button>
+
+        <div id="weather-status" class="subtle status-line">
+          Weather uses your browser location permission.
+        </div>
+
+      </div>
+
+
+      <!-- BREAKING NEWS -->
+      <section class="news-panel panel" aria-label="Bangladesh breaking news">
+
+        <div class="panel-heading">
+
+          <div>
+            <div class="eyebrow">
+              BREAKING NEWS // BANGLADESH
+            </div>
+
+            <div class="panel-subtitle">
+              PUBLIC SAFETY & IMPORTANT UPDATES
+            </div>
+          </div>
+
+          <span id="news-state" class="state">
+            CHECKING
+          </span>
+
+        </div>
+
+        <div id="news-list" class="news-list">
+          <div class="empty-state">
+            FETCHING AVAILABLE SOURCES...
+          </div>
+        </div>
+
+        <div class="panel-foot">
+          <span id="news-updated">CHECKING ON TAB OPEN</span>
+          <button id="news-refresh" class="text-button">
+            REFRESH ↻
+          </button>
+        </div>
+
+      </section>
+
+
+      <!-- NETWORK MONITOR -->
+      <section class="network-panel panel" aria-label="Network monitor">
+
+        <div class="panel-heading">
+          <div class="eyebrow">NETWORK MONITOR</div>
+          <span id="network-state" class="state">READY</span>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">DOWNLOAD</div>
+          <div class="metric-value">
+            <span id="download-value">--</span>
+            <small>Mbps</small>
+          </div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">UPLOAD</div>
+          <div class="metric-value">
+            <span id="upload-value">--</span>
+            <small>Mbps</small>
+          </div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">PING / LATENCY</div>
+          <div class="metric-value">
+            <span id="ping-value">--</span>
+            <small>ms</small>
+          </div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">TEST SERVER</div>
+          <div id="server-value" class="metric-text">
+            Cloudflare
+          </div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">ISP / ORGANIZATION</div>
+          <div id="isp-value" class="metric-text">
+            Looking up...
+          </div>
+        </div>
+
+        <div class="metric">
+          <div class="metric-label">PUBLIC IP</div>
+          <div id="ip-value" class="metric-text">
+            Looking up...
+          </div>
+        </div>
+
+        <button id="network-test" class="outline-button">
+          RUN NETWORK TEST ↗
+        </button>
+
+        <div id="network-note" class="subtle network-note">
+          Network test runs only when requested.
+        </div>
+
+      </section>
+
+
+      <!-- PARTICLE EARTH -->
+      <section class="earth-panel">
+
+        <div class="earth-heading">
+          <span class="eyebrow">GLOBAL MONITOR</span>
+          <span class="state">LIVE / 01</span>
+        </div>
+
+        <div class="earth-wrap">
+
+          <canvas
+            id="earth-canvas"
+            class="earth-canvas"
+            width="600"
+            height="600"
+            role="img"
+            aria-label="Slowly rotating cyan particle Earth"
+          ></canvas>
+
+        </div>
+
+        <div class="earth-caption">
+          EARTH / GLOBAL SYSTEM
+        </div>
+
+      </section>
+
+    </section>
+
+
+    <!-- SEARCH -->
+    <section class="search-section">
+
+      <div class="eyebrow section-label">
+        GOOGLE
+      </div>
+
+      <form id="search-form" class="search-box">
+
+        <span class="search-symbol">⌕</span>
+
+        <input
+          id="search-input"
+          type="text"
+          autocomplete="off"
+          placeholder="Search Google or enter a URL..."
+          aria-label="Search Google or enter a URL"
+        >
+
+        <button type="submit">SEARCH</button>
+
+      </form>
+
+      <div class="search-hint">
+        PRESS ENTER TO SEARCH
+      </div>
+
+    </section>
+
+
+    <!-- QUICK ACCESS -->
+    <section class="shortcuts-section">
+
+      <div class="section-head">
+        <div class="eyebrow">QUICK ACCESS</div>
+
+        <button id="add-shortcut" class="text-button">
+          + ADD SHORTCUT
+        </button>
+      </div>
+
+      <div id="shortcuts" class="shortcuts-grid"></div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ADD SHORTCUT DIALOG -->
+  <dialog id="shortcut-dialog" class="dialog">
+
+    <form id="shortcut-form" method="dialog">
+
+      <div class="eyebrow">ADD QUICK ACCESS</div>
+
+      <label>
+        NAME
+        <input
+          id="shortcut-name"
+          required
+          maxlength="24"
+          placeholder="Example: Stack Overflow"
+        >
+      </label>
+
+      <label>
+        URL
+        <input
+          id="shortcut-url"
+          required
+          type="url"
+          placeholder="https://example.com"
+        >
+      </label>
+
+      <div class="dialog-actions">
+
+        <button
+          type="button"
+          id="cancel-shortcut"
+          class="small-button"
+        >
+          CANCEL
+        </button>
+
+        <button type="submit" class="outline-button">
+          SAVE SHORTCUT
+        </button>
+
+      </div>
+
+    </form>
+
+  </dialog>
+
+
+  <script src="js/app.js"></script>
+
+</body>
+</html>

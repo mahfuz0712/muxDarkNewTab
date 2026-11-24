@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "New Tab",
+  "version": "1.1.0",
+  "description": "MUX Dark dashboard with Bangladesh breaking alerts, network monitor, weather and shortcuts.",
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": [
+    "storage",
+    "geolocation"
+  ],
+  "icons": {
+    "16": "assets/mux-icon-16.png",
+    "32": "assets/mux-icon-32.png",
+    "48": "assets/mux-icon-48.png",
+    "128": "assets/mux-icon-128.png"
+  },
+  "host_permissions": [
+    "https://api.open-meteo.com/*",
+    "https://ipwho.is/*",
+    "https://api.ipify.org/*",
+    "https://www.cloudflare.com/*",
+    "https://api.rss2json.com/*",
+    "https://ipapi.co/*",
+    "https://www.google.com/*"
+  ]
+}
